@@ -1,13 +1,25 @@
 <script setup lang="ts">
 import { useCurseur } from '@/composables/useCurseur'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
+
+const props = withDefaults(defineProps<{
+    setVisibleOnMounted?: boolean
+}>(), {
+    setVisibleOnMounted: true
+})
+
+const curseurApi = useCurseur()
+
+if (props.setVisibleOnMounted) {
+    onMounted(() => curseurApi.toggleCursorVisibility(true))
+}
 
 const {
     cursorX,
     cursorY,
     CursorComponent,
     cursorAttrs,
-} = useCurseur()
+} = curseurApi
 
 const translateStyles = computed(() => {
     const translateX = `calc(${cursorX.value}px - 50%)`

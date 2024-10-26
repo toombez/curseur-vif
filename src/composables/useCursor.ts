@@ -11,7 +11,7 @@ const useCursor = () => {
         setDynamicComponent,
     } = useDynamicComponent()
 
-    const [isCursorVisible, toggleCursorVisibility] = useToggle()
+    const [isCursorVisible, toggleCursorVisibility] = useToggle(false)
 
     const { x: cursorX, y: cursorY } = useMouse({
         touch: false,
