@@ -5,6 +5,8 @@ import { computed } from 'vue'
 const {
     cursorX,
     cursorY,
+    CursorComponent,
+    cursorAttrs,
 } = useCurseur()
 
 const translateStyles = computed(() => {
@@ -17,11 +19,13 @@ const translateStyles = computed(() => {
 
 <template>
     <div
-        v-if="$curseur.isCursorVisible"
+        v-if="$curseur.isCursorVisible.value"
         :style="{ translate: translateStyles }"
         :class="$style.cursor"
     >
-        {{ cursorX }} | {{ cursorY }}
+        <slot v-if="!$curseur.isHaveCursorComponent.value" />
+
+        <CursorComponent v-else :="cursorAttrs" />
     </div>
 </template>
 
