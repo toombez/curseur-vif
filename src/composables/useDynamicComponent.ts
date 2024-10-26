@@ -26,12 +26,13 @@ const useDynamicComponent = (options: UseDynamicComponentOptions = {}) => {
         component: C,
         attrs: AllComponentAttrs<C> = {} as AllComponentAttrs<C>,
     ) => {
-        if (component === dynamicComponent.value) {
-            return
+        if (component !== dynamicComponent.value) {
+            dynamicComponent.value = component
         }
 
-        dynamicComponent.value = component
-        dynamicomponentAttrs.value = attrs
+        if (attrs !== dynamicomponentAttrs.value) {
+            dynamicomponentAttrs.value = attrs
+        }
     }
 
     const deleteDynamicComponent = () => {
