@@ -3,9 +3,11 @@ import type { Directive } from "vue"
 
 type DirectiveModifier = 'self'
 
+type DirectiveValue = string | undefined
+
 type VCursorHoverDirective = Directive<
     HTMLElement,
-    any,
+    DirectiveValue,
     DirectiveModifier
 >
 
@@ -13,7 +15,12 @@ const curseurApi = useCurseur()
 
 const vCursorHoverDirective: VCursorHoverDirective = {
     mounted(el, binding) {
-        curseurApi.addHoverableElement(el, binding.modifiers.self)
+        const { value } = binding
+
+        curseurApi.addHoverableElement(el, {
+            key: value,
+            self: binding.modifiers.self
+        })
     },
 
     unmounted(el) {
