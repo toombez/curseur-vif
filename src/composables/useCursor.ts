@@ -1,7 +1,7 @@
-import { useMouse, useToggle } from "@vueuse/core"
-import { useDynamicComponent } from "./useDynamicComponent"
 import { shallowReadonly } from "vue"
-import { useHoverableElements } from "./useHoverableElements"
+import { useMouse, useToggle } from "@vueuse/core"
+import { useDynamicComponent } from "@/composables/useDynamicComponent"
+import { useHoverableElements } from "@/composables/useHoverableElements"
 
 const useCursor = () => {
     const {

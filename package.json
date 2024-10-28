@@ -1,7 +1,13 @@
 {
   "name": "curseur-vif",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Vue.js library for creating custom cursors",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "cursor",
+    "ui"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -22,7 +28,50 @@
     "npm-run-all2": "^7.0.1",
     "typescript": "~5.6.0",
     "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
     "vite-plugin-vue-devtools": "^7.5.3",
     "vue-tsc": "^2.1.6"
-  }
+  },
+  "packageManager": "pnpm@8.6.12",
+  "homepage": "https://github.com/toombez/curseur-vif",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toombez/curseur-vif.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toombez/curseur-vif/issues"
+  },
+  "author": {
+    "name": "Timur Tokaev",
+    "url": "https://github.com/toombez"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./composables": {
+      "import": "./dist/composables.js",
+      "require": "./dist/composables.cjs",
+      "types": "./dist/composables.d.ts"
+    },
+    "./directives": {
+      "import": "./dist/directives.js",
+      "require": "./dist/directives.cjs",
+      "types": "./dist/directives.d.ts"
+    },
+    "./plugin": {
+      "import": "./dist/plugin.js",
+      "require": "./dist/plugin.cjs",
+      "types": "./dist/plugin.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts"
 }

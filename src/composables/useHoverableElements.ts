@@ -1,6 +1,6 @@
 import { computed, readonly, ref, shallowRef } from "vue"
 
-interface HoverableElementData {
+export interface HoverableElementData {
     self: boolean
     key?: string
 }
