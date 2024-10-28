@@ -1,7 +1,13 @@
 {
   "name": "curseur-vif",
   "version": "0.0.0",
-  "private": true,
+  "description": "Vue.js library for creating custom cursors",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "cursor",
+    "color-manipulation"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -25,6 +31,19 @@
     "vite-plugin-dts": "^4.3.0",
     "vite-plugin-vue-devtools": "^7.5.3",
     "vue-tsc": "^2.1.6"
+  },
+  "packageManager": "pnpm@8.6.12",
+  "homepage": "https://github.com/toombez/curseur-vif",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toombez/curseur-vif.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toombez/curseur-vif/issues"
+  },
+  "author": {
+    "name": "Timur Tokaev",
+    "url": "https://github.com/toombez"
   },
   "files": [
     "dist"
