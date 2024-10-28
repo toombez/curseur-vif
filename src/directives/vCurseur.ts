@@ -10,7 +10,7 @@ type DirectiveValue<
     | { component: C, attrs?: AllComponentAttrs<C> }
     | C
 
-type VCursorDirective = Directive<
+type VCurseurDirective = Directive<
     HTMLElement,
     DirectiveValue,
     DirectiveModifiers
@@ -25,7 +25,7 @@ type HandlersMapValue = {
 
 const handlersMap = new Map<HTMLElement, HandlersMapValue>()
 
-const vCursorDirective: VCursorDirective = {
+const vCurseurDirective: VCurseurDirective = {
     mounted(el, binding) {
         const { value, modifiers } = binding
         const curseurApi = useCurseur()
@@ -79,4 +79,4 @@ const vCursorDirective: VCursorDirective = {
     },
 }
 
-export { vCursorDirective }
+export { vCurseurDirective }

@@ -5,7 +5,7 @@ type DirectiveModifier = 'self'
 
 type DirectiveValue = string | undefined
 
-type VCursorHoverDirective = Directive<
+type VCurseurHoverDirective = Directive<
     HTMLElement,
     DirectiveValue,
     DirectiveModifier
@@ -13,7 +13,7 @@ type VCursorHoverDirective = Directive<
 
 const curseurApi = useCurseur()
 
-const vCursorHoverDirective: VCursorHoverDirective = {
+const vCurseurHoverDirective: VCurseurHoverDirective = {
     mounted(el, binding) {
         const { value } = binding
 
@@ -28,4 +28,4 @@ const vCursorHoverDirective: VCursorHoverDirective = {
     }
 }
 
-export { vCursorHoverDirective }
+export { vCurseurHoverDirective }
