@@ -1,33 +1,38 @@
 # CurseurVif (Vif meaning lively)
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue.js library for creating custom cursors
 
-## Recommended IDE Setup
+## Usage
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Add the following code to your `main.ts`
 
-## Type Support for `.vue` Imports in TS
+```ts
+import { createApp } from 'vue'
+import App from './App.vue'
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+// curseur-vif
+import 'curseur-vif/style.css'
+import curseurPlugin from 'curseur-vif/plugin'
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
+createApp(App).use(curseurPlugin, {}).mount('#app')
 ```
 
-### Compile and Hot-Reload for Development
+Then in App.vue use `TheCursor` component
 
-```sh
-pnpm dev
+```vue
+<script setup lang="ts">
+import { TheCursor } from 'curseur-vif'
+</script>
+
+<template>
+  <div>
+    <TheCursor>
+      <!-- Provide default cursor component -->
+    </TheCursor>
+  </div>
+</template>
 ```
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-pnpm build
-```
+LICENCE MIT - Created by Timur Tokaev (@toombez)
