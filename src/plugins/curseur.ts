@@ -1,15 +1,15 @@
 import type { Plugin } from "vue"
 import { useCurseur } from "@/composables/useCurseur"
-import { vCursorDirective } from "@/directives/vCursor"
-import { vCursorHoverDirective } from "@/directives/vCursorHover"
+import { vCurseurDirective } from "@/directives/vCurseur"
+import { vCurseurHoverDirective } from "@/directives/vCurseurHover"
 
 declare module 'vue' {
     interface ComponentCustomProperties {
         $curseur: ReturnType<typeof useCurseur>;
 
-        vCursor: typeof vCursorDirective
+        vCurseur: typeof vCurseurDirective
 
-        vCursorHover: typeof vCursorHoverDirective
+        vCurseurHover: typeof vCurseurHoverDirective
     }
 }
 
@@ -18,8 +18,8 @@ interface PluginOptions {}
 const curseurPlugin: Plugin<PluginOptions> = (app, options) => {
     app.config.globalProperties.$curseur = useCurseur()
 
-    app.directive('cursor', vCursorDirective)
-    app.directive('cursor-hover', vCursorHoverDirective)
+    app.directive('curseur', vCurseurDirective)
+    app.directive('curseur-hover', vCurseurHoverDirective)
 }
 
 export default curseurPlugin

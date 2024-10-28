@@ -1,7 +1,7 @@
-import { vCursorDirective } from "@/directives/vCursor";
-import { vCursorHoverDirective } from "@/directives/vCursorHover";
+import { vCurseurDirective } from "@/directives/vCurseur";
+import { vCurseurHoverDirective } from "@/directives/vCurseurHover";
 
 export {
-    vCursorDirective,
-    vCursorHoverDirective,
+    vCurseurDirective,
+    vCurseurHoverDirective,
 }
