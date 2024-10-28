@@ -16,6 +16,15 @@ type VCursorDirective = Directive<
     DirectiveModifiers
 >
 
+type Handler = (event: MouseEvent) => void
+
+type HandlersMapValue = {
+    mouseoverHandler: Handler,
+    mouseleaveHandler: Handler
+}
+
+const handlersMap = new Map<HTMLElement, HandlersMapValue>()
+
 const vCursorDirective: VCursorDirective = {
     mounted(el, binding) {
         const { value, modifiers } = binding
@@ -52,7 +61,22 @@ const vCursorDirective: VCursorDirective = {
 
         el.addEventListener('mouseover', mouseoverHandler)
         el.addEventListener('mouseleave', mouseleaveHandler)
-    }
+    },
+
+    unmounted(el) {
+        if (typeof el === 'undefined') {
+            return
+        }
+
+        if (!handlersMap.has(el)) {
+            return
+        }
+
+        const handlers = handlersMap.get(el)!
+
+        el.removeEventListener('mouseover', handlers.mouseoverHandler)
+        el.removeEventListener('mouseleave', handlers.mouseleaveHandler)
+    },
 }
 
 export { vCursorDirective }
