@@ -33,6 +33,15 @@ import { TheCursor } from 'curseur-vif'
 </template>
 ```
 
+## Curseur global API
+
+For cursor API curseur provides two options:
+
+- global property `$curseur` for `template` section;
+- composable `useCurseur` for `script` section.
+
+
+
 ## Directive usage
 
 ### v-curseur
