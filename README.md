@@ -40,7 +40,41 @@ For cursor API curseur provides two options:
 - global property `$curseur` for `template` section;
 - composable `useCurseur` for `script` section.
 
+## Creating cursor component
 
+```vue
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useCurseur } from 'curseur-vif'
+
+const isScaled = computed(() => {
+  // Handling hovering elements with v-curseur-hover="'scale'" directive
+  return useCurseur().hoveredElementKey.value === 'scale'
+})
+</script>
+
+<template>
+  <div
+    :class="[
+      $style.cursor,
+      { [$style.scaled]: isScaled },
+    ]"
+  />
+</template>
+
+<style module>
+.cursor {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  border: 1px solid darkgray;
+  transition: scale 0.2s ease-in-out;
+}
+.scaled {
+  scale: 1.2;
+}
+</style>
+```
 
 ## Directive usage
 
