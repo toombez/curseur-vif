@@ -1,12 +1,12 @@
 {
   "name": "curseur-vif",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Vue.js library for creating custom cursors",
   "license": "MIT",
   "keywords": [
     "vue",
     "cursor",
-    "color-manipulation"
+    "ui"
   ],
   "type": "module",
   "scripts": {
