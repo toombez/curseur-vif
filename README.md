@@ -33,6 +33,57 @@ import { TheCursor } from 'curseur-vif'
 </template>
 ```
 
+## Directive usage
+
+### v-curseur
+
+Directive `v-curseur` allow to change cursor component when hovered element. Can be passed new cursor component or component with attrs object that will be applyed.
+
+Only cursor component:
+
+```vue
+<template>
+  <div v-curseur="NewCursorComponent">
+    <!-- ... -->
+  </div>
+</template>
+```
+
+Cursor component and itself attrs:
+
+```vue
+<template>
+  <div v-curseur="{ component: NewCursorComponent, attrs: { style: 'background: red;' } }">
+
+    <!-- ... -->
+  </div>
+</template>
+```
+
+### v-curseur-hover
+
+Directive `v-curseur-hover` allow to handle hovering state of elements. Can be passed `string` key for identify hover state.
+
+Just handle element hovering:
+
+```vue
+<template>
+  <div v-curseur-hover>
+    <!-- ... -->
+  </div>
+</template>
+```
+
+Pass `string` key for hovering state:
+
+```vue
+<template>
+  <div v-curseur-hover="'scale'">
+    <!-- ... -->
+  </div>
+</template>
+```
+
 ---
 
 LICENCE MIT - Created by Timur Tokaev (@toombez)
