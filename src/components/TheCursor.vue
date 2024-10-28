@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useCurseur } from '@/composables/useCurseur'
 import { computed, onMounted } from 'vue'
+import { useCurseur } from '@/composables/useCurseur'
 
 const props = withDefaults(defineProps<{
     setVisibleOnMounted?: boolean
@@ -37,7 +37,7 @@ const translateStyles = computed(() => {
     >
         <slot v-if="!$curseur.isHaveCursorComponent.value" />
 
-        <CursorComponent v-else :="cursorAttrs" />
+        <component v-else :is="CursorComponent" :="cursorAttrs" />
     </div>
 </template>
 
