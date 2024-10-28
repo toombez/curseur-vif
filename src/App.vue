@@ -10,15 +10,15 @@ import TheCursor from './components/TheCursor.vue';
     <main>
         <div
             :class="[$style.square, $style['outer-square']]"
-            v-cursor.self="SquareCursor"
+            v-curseur.self="SquareCursor"
         >
             <div
                 :class="[$style.square, $style['inner-square']]"
-                v-cursor.self="BorderCursor"
+                v-curseur.self="BorderCursor"
             >
                 <div
                     :class="[$style.square, $style['deep-inner-square']]"
-                    v-cursor.self="CircleCursor"
+                    v-curseur.self="CircleCursor"
                 ></div>
             </div>
         </div>
@@ -31,14 +31,14 @@ import TheCursor from './components/TheCursor.vue';
 
         <div
             style="width: 200px; aspect-ratio: 1; background-color: blue;"
-            v-cursor="{ attrs: {}, component: CircleCursor }"
+            v-curseur="{ attrs: {}, component: CircleCursor }"
         >
         </div>
 
         <div
             style="width: 200px; aspect-ratio: 1; background-color: brown;"
             :class="$style.square"
-            v-cursor-hover="'scale'"
+            v-curseur-hover="'scale'"
         >
             <div style="width: 100px; aspect-ratio: 1; background-color: cadetblue"></div>
         </div>
