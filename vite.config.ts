@@ -24,10 +24,14 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: resolve(__dirname, "src/index.ts"),
+            entry: {
+                'index': resolve(__dirname, "src/index.ts"),
+                'composables': resolve(__dirname, "src/composables/index.ts"),
+                'directives': resolve(__dirname, "src/directives/index.ts"),
+                'plugin': resolve(__dirname, "src/plugins/curseur.ts"),
+            },
             name: "CurseurVif",
-            fileName: "curseur-vif",
-            formats: ['es', 'umd'],
+            formats: ['es', 'cjs'],
         },
         rollupOptions: {
             external: ["vue"],
